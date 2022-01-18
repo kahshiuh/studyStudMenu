@@ -5,7 +5,7 @@ import {useGlobalContext} from '../context';
 const ViewDeckButton = () => {
   return (
     <Pressable style={styles.button}>
-      <Text style={styles.text}>VIEW</Text>
+      <Text style={styles.text}>View</Text>
     </Pressable>
   );
 };
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     height: 40,
     width: 50,
-    backgroundColor: 'black',
+    backgroundColor: '#2f4858',
     alignContent: 'center',
     justifyContent: 'center',
   },
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Malayalam Sangam MN',
     fontSize: 10,
     textAlign: 'center',
-    padding: '12%',
+    padding: 3,
   },
 });
 export default ViewDeckButton;

@@ -5,7 +5,7 @@ import {useGlobalContext} from '../context';
 const EditDeckButton = () => {
   return (
     <Pressable style={styles.button}>
-      <Text style={styles.text}>EDIT</Text>
+      <Text style={styles.text}>Edit</Text>
     </Pressable>
   );
 };
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     height: 40,
     width: 50,
-    backgroundColor: 'black',
+    backgroundColor: '#2f4858',
     alignContent: 'center',
     justifyContent: 'center',
   },

@@ -14,8 +14,9 @@ const initialState = {
 };
 const AppProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const deleteDeck = id => {
-    dispatch({type: 'DELETE_DECK', payload: id});
+  const deleteDeck = props => {
+    console.log(props);
+    dispatch({type: 'DELETE_DECK', payload: props});
   };
 
   return (

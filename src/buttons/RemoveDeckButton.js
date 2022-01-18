@@ -2,10 +2,14 @@ import React from 'react';
 import {Pressable, View, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../context';
 
-const RemoveDeckButton = () => {
+const RemoveDeckButton = ({id}) => {
   const {deleteDeck} = useGlobalContext();
+  function onClickHandler(props) {
+    console.log(id);
+    deleteDeck(id);
+  }
   return (
-    <Pressable onPress={deleteDeck} style={styles.button}>
+    <Pressable onPress={onClickHandler} style={styles.button}>
       <Text style={styles.text}>Remove</Text>
     </Pressable>
   );
@@ -16,7 +20,7 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     height: 40,
     width: 50,
-    backgroundColor: 'black',
+    backgroundColor: '#2f4858',
     alignContent: 'center',
     justifyContent: 'center',
   },
