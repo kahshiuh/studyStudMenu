@@ -5,7 +5,6 @@ import {useGlobalContext} from '../context';
 const RemoveDeckButton = ({id}) => {
   const {deleteDeck} = useGlobalContext();
   function onClickHandler(props) {
-    console.log(id);
     deleteDeck(id);
   }
   return (
@@ -23,6 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2f4858',
     alignContent: 'center',
     justifyContent: 'center',
+    marginRight: 8,
   },
   text: {
     color: 'white',

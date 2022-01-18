@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Card} from 'react-native';
+import {
+  Text,
+  ScrollView,
+  View,
+  StyleSheet,
+  Card,
+  SafeAreaView,
+} from 'react-native';
 import {useGlobalContext} from './context';
 
 import Deck from './Deck';
@@ -7,20 +14,22 @@ import Deck from './Deck';
 const Menu = () => {
   const {decks} = useGlobalContext();
   return (
-    <View style={styles.container}>
-      {decks.map(deck => {
-        return <Deck name={deck.name} id={deck.id}></Deck>;
-      })}
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.deckItem}>
+        {decks.map(deck => {
+          return <Deck name={deck.name} id={deck.id}></Deck>;
+        })}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    height: 750,
-    width: 400,
-    backgroundColor: '#9f6ba0',
+    backgroundColor: '#00272B',
+    height: '100%',
     alignItems: 'center',
     display: 'flex',
   },
+  deckItem: {},
 });
 export default Menu;

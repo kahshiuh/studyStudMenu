@@ -11,34 +11,29 @@ const Deck = props => {
       <Text style={styles.text}>{props.name}</Text>
       <View style={styles.buttonContainer}>
         <RemoveDeckButton id={props.id}> </RemoveDeckButton>
-        <EditDeckButton> </EditDeckButton>
-        <ViewDeckButton />
+        <EditDeckButton id={props.id}> </EditDeckButton>
+        <ViewDeckButton id={props.id}> </ViewDeckButton>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    height: 750,
-    width: 400,
-    backgroundColor: '#9f6ba0',
-    alignItems: 'center',
-    display: 'flex',
-  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
   },
   deck: {
+    height: 150,
     marginVertical: 10,
-    width: 200,
+    width: 300,
     backgroundColor: '#c880b7',
+    borderRadius: 20,
   },
   text: {
     color: 'white',
     fontFamily: 'Malayalam Sangam MN',
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
     marginVertical: 20,
   },

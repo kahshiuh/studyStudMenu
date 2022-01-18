@@ -2,9 +2,13 @@ import React from 'react';
 import {Pressable, View, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../context';
 
-const ViewDeckButton = () => {
+const ViewDeckButton = ({id}) => {
+  const {viewDeck} = useGlobalContext();
+  function onClickHandler() {
+    viewDeck(id);
+  }
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={onClickHandler}>
       <Text style={styles.text}>View</Text>
     </Pressable>
   );
@@ -17,6 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2f4858',
     alignContent: 'center',
     justifyContent: 'center',
+    marginRight: 8,
   },
   text: {
     color: 'white',

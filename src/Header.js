@@ -11,15 +11,15 @@ const Header = ({title}) => {
 
 const styles = StyleSheet.create({
   header: {
-    height: 80,
+    height: '10%',
     backgroundColor: '#369df7',
   },
   text: {
     color: 'white',
     fontFamily: 'Malayalam Sangam MN',
-    fontSize: 23,
+    fontSize: 25,
     textAlign: 'center',
-    padding: '12%',
+    padding: '11%',
   },
 });
 export default Header;
