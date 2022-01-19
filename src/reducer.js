@@ -6,10 +6,15 @@ const reducer = (state, action) => {
         ...state,
         decks: state.decks.filter(deck => deck.id !== action.payload),
       };
-    case 'CHANGE_EDIT_DECK_MODE':
+    case 'TURN_ON_EDIT_DECK_MODE':
       return {
         ...state,
-        editScreen: !action.payload,
+        editScreen: true,
+      };
+    case 'TURN_OFF_EDIT_DECK_MODE':
+      return {
+        ...state,
+        editScreen: false,
       };
     case 'SELECT_DECK_TO_EDIT':
       return {

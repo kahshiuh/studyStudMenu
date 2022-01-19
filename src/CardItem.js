@@ -6,7 +6,9 @@ import RemoveCardButton from './buttons/RemoveCardButton';
 const CardItem = props => {
   return (
     <View style={styles.card} id={props.id} key={props.id}>
-      <Text style={styles.text}>{props.term}</Text>
+      <Text style={styles.text}>
+        {props.term}: {props.defination}
+      </Text>
       <EditCardButton />
       <RemoveCardButton />
     </View>
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontFamily: 'Malayalam Sangam MN',
-    fontSize: 30,
+    fontSize: 20,
     textAlign: 'center',
     marginVertical: 20,
   },

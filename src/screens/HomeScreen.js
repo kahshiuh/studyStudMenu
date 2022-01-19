@@ -6,12 +6,12 @@ import Menu from '../Menu';
 
 const HomeScreen = ({navigation}) => {
   const {editScreen} = useGlobalContext();
-  const onPressHandler = () => {
-    navigation.navigate('EditDeckScreen');
-  };
   useEffect(() => {
-    navigation.navigate('EditDeckScreen');
     console.log('Hello');
+    if (editScreen) {
+      navigation.navigate('EditDeckScreen');
+    }
+    return () => {};
   }, [editScreen]);
   return (
     <View style={styles.container}>
@@ -23,11 +23,6 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   whole: {
     flex: 1,
-  },
-  temp: {
-    height: 100,
-    width: 100,
-    backgroundColor: 'red',
   },
 });
 

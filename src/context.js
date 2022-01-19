@@ -18,8 +18,11 @@ const AppProvider = ({children}) => {
     dispatch({type: 'VIEW_DECK', payload: props});
   };
   const editDeck = props => {
-    dispatch({type: 'CHANGE_EDIT_DECK_MODE', payload: state.editScreen});
+    dispatch({type: 'TURN_ON_EDIT_DECK_MODE', payload: state.editScreen});
     dispatch({type: 'SELECT_DECK_TO_EDIT', payload: props});
+  };
+  const stopEditDeck = () => {
+    dispatch({type: 'TURN_OFF_EDIT_DECK_MODE'});
   };
 
   return (
@@ -29,6 +32,7 @@ const AppProvider = ({children}) => {
         deleteDeck,
         viewDeck,
         editDeck,
+        stopEditDeck,
       }}>
       {children}
     </AppContext.Provider>

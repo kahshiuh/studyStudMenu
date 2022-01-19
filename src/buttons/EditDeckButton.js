@@ -5,6 +5,7 @@ import {useGlobalContext} from '../context';
 const EditDeckButton = ({id}) => {
   const {editDeck} = useGlobalContext();
   function onClickHandler() {
+    console.log('aaa');
     editDeck(id);
   }
   return (

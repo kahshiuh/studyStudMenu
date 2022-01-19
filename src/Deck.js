@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Card} from 'react-native';
 import {useGlobalContext} from './context';
 import RemoveDeckButton from './buttons/RemoveDeckButton';

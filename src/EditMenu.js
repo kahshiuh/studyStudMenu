@@ -9,7 +9,7 @@ const EditMenu = props => {
   const {decks, selectedDeck} = useGlobalContext();
   const card = decks.find(element => element.id === selectedDeck);
   let i = -1;
-  console.log(props);
+  //console.log(props);
   console.log(card);
   return (
     <View style={styles.container}>

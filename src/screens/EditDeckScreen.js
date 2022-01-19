@@ -7,13 +7,18 @@ import Header from '../Header';
 import EditMenu from '../EditMenu';
 
 const EditDeckScreen = ({navigation}) => {
+  const {stopEditDeck} = useGlobalContext();
   const onPressHandler = () => {
+    console.log('here');
+    stopEditDeck();
     navigation.navigate('StudyStud');
   };
   return (
     <View style={styles.container}>
       <Header title="Edit Deck" />
-      <Pressable style={styles.temp} onPress={onPressHandler}></Pressable>
+      <Pressable style={styles.temp} onPress={onPressHandler}>
+        <Text style={styles.text}>Return</Text>
+      </Pressable>
       <EditMenu />
     </View>
   );
@@ -23,9 +28,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   temp: {
-    height: 100,
-    width: 100,
+    height: 50,
+    width: '100%',
     backgroundColor: 'blue',
+  },
+  text: {
+    color: 'white',
+    fontFamily: 'Malayalam Sangam MN',
+    fontSize: 20,
+    textAlign: 'center',
   },
 });
 export default EditDeckScreen;
