@@ -7,6 +7,7 @@ const initialState = {
   decks: data,
   total: 0,
   editScreen: false,
+  selectedDeck: 0,
 };
 const AppProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -18,8 +19,7 @@ const AppProvider = ({children}) => {
   };
   const editDeck = props => {
     dispatch({type: 'CHANGE_EDIT_DECK_MODE', payload: state.editScreen});
-    dispatch({type: 'EDIT_DECK_MODE', payload: props});
-    console.log('asds');
+    dispatch({type: 'SELECT_DECK_TO_EDIT', payload: props});
   };
 
   return (

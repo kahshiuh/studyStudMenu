@@ -7,10 +7,14 @@ const reducer = (state, action) => {
         decks: state.decks.filter(deck => deck.id !== action.payload),
       };
     case 'CHANGE_EDIT_DECK_MODE':
-      console.log(action.payload);
       return {
         ...state,
         editScreen: !action.payload,
+      };
+    case 'SELECT_DECK_TO_EDIT':
+      return {
+        ...state,
+        selectedDeck: action.payload,
       };
   }
 

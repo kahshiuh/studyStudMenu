@@ -1,7 +1,7 @@
+import React, {useEffect} from 'react';
 import {useGlobalContext} from '../context';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import Header from '../Header';
+import {ScrollView, Pressable, View, Text, StyleSheet} from 'react-native';
 import Menu from '../Menu';
 
 const HomeScreen = ({navigation}) => {
@@ -20,5 +20,15 @@ const HomeScreen = ({navigation}) => {
     </View>
   );
 };
+const styles = StyleSheet.create({
+  whole: {
+    flex: 1,
+  },
+  temp: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'red',
+  },
+});
 
 export default HomeScreen;
