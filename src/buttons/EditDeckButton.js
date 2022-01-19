@@ -1,11 +1,10 @@
 import React from 'react';
 import {Pressable, View, Text, StyleSheet} from 'react-native';
-import {useGlobalContext} from '../context';
+import {useGlobalContext} from '../resources/context';
 
 const EditDeckButton = ({id}) => {
   const {editDeck} = useGlobalContext();
   function onClickHandler() {
-    console.log('aaa');
     editDeck(id);
   }
   return (

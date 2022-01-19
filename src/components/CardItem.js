@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, StyleSheet, Card} from 'react-native';
-import EditCardButton from './buttons/EditCardButton';
-import RemoveCardButton from './buttons/RemoveCardButton';
+import EditCardButton from '../buttons/EditCardButton';
+import RemoveCardButton from '../buttons/RemoveCardButton';
 
 const CardItem = props => {
   return (
@@ -9,23 +9,27 @@ const CardItem = props => {
       <Text style={styles.text}>
         {props.term}: {props.defination}
       </Text>
-      <EditCardButton />
-      <RemoveCardButton />
+      <View style={styles.buttonContainer}>
+        <EditCardButton />
+        <RemoveCardButton />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
   card: {
     height: 150,
     marginVertical: 10,
     width: 300,
     backgroundColor: '#c880b7',
     borderRadius: 20,
+    flex: 1,
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   text: {
     color: 'white',

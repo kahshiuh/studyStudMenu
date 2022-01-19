@@ -7,9 +7,9 @@ import {
   Card,
   SafeAreaView,
 } from 'react-native';
-import {useGlobalContext} from './context';
+import {useGlobalContext} from './resources/context';
 
-import Deck from './Deck';
+import Deck from './components/Deck';
 
 const Menu = () => {
   const {decks} = useGlobalContext();

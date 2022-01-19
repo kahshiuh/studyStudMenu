@@ -21,6 +21,16 @@ const reducer = (state, action) => {
         ...state,
         selectedDeck: action.payload,
       };
+    case 'TURN_ON_EDIT_MODAL':
+      return {
+        ...state,
+        editModalOn: true,
+      };
+    case 'TURN_OFF_EDIT_MODAL':
+      return {
+        ...state,
+        editModalOn: false,
+      };
   }
 
   return state;

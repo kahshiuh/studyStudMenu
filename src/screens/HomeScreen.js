@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useGlobalContext} from '../context';
+import {useGlobalContext} from '../resources/context';
 import Header from '../Header';
 import {ScrollView, Pressable, View, Text, StyleSheet} from 'react-native';
 import Menu from '../Menu';

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, View, StyleSheet, Card} from 'react-native';
-import {useGlobalContext} from './context';
-import RemoveDeckButton from './buttons/RemoveDeckButton';
-import EditDeckButton from './buttons/EditDeckButton';
-import ViewDeckButton from './buttons/ViewDeckButton';
+import {useGlobalContext} from '../resources/context';
+import RemoveDeckButton from '../buttons/RemoveDeckButton';
+import EditDeckButton from '../buttons/EditDeckButton';
+import ViewDeckButton from '../buttons/ViewDeckButton';
 
 const Deck = props => {
   return (

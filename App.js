@@ -4,14 +4,14 @@
  *
  *
  * git add .
- * git commit -m "Cleaned up code structure"
+ * git commit -m "Refactored files, created modal popup and added basic functionality, fixed header buttons"
  * git push -u origin main
  *
  * @format
  * @flow strict-local
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import Setup from './src/Setup';
 
 const App = () => {
