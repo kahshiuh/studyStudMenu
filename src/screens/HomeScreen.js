@@ -6,13 +6,14 @@ import Menu from '../menus/Menu';
 import AddDeckScreen from './AddDeckScreen';
 
 const HomeScreen = ({navigation}) => {
-  const {editScreen} = useGlobalContext();
+  const {editScreen, decks} = useGlobalContext();
   useEffect(() => {
     if (editScreen) {
       navigation.navigate('EditDeckScreen');
     }
     return () => {};
   }, [editScreen]);
+  useEffect(() => {}, [Object.keys(decks).length]);
   return (
     <View style={styles.container}>
       <Header title="StudyStud" />

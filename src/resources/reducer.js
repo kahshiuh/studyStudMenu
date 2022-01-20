@@ -49,6 +49,23 @@ const reducer = (state, action) => {
       return {
         ...state,
       };
+    case 'ADD_DECK':
+      let idNum = Object.keys(state.decks).length + 1;
+      let vars = {id: idNum, name: action.payload, terms: [], definations: []};
+      state.decks[idNum] = vars;
+      return {
+        ...state,
+      };
+    case 'ADD_CARD':
+      //will need to update to keep removed decks in mind unless selectedDeck is not given id
+      console.log(action.payload.defination);
+      state.decks[state.selectedDeck - 1].terms.push(action.payload.term);
+      state.decks[state.selectedDeck - 1].definations.push(
+        action.payload.defination,
+      );
+      return {
+        ...state,
+      };
   }
 
   return state;

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Pressable} from 'react-native';
 import {useGlobalContext} from './resources/context';
-import CreateNewCard from './buttons/CreateNewCardButton';
+import CreateNewCardButton from './buttons/CreateNewCardButton';
 import ReturnButton from './buttons/ReturnButton';
 import AddDeckButton from './buttons/AddDeckButton';
 const Header = ({title, navigation}) => {
   const {editScreen, stopEditDeck} = useGlobalContext();
   const buttons = editScreen ? (
     <View style={styles.buttonContainer}>
-      <CreateNewCard />
+      <CreateNewCardButton />
       <ReturnButton navigation={navigation} />
     </View>
   ) : (
@@ -28,7 +28,7 @@ const Header = ({title, navigation}) => {
 
 const styles = StyleSheet.create({
   header: {
-    height: '12%',
+    height: '14%',
     width: '100%',
     backgroundColor: '#369df7',
     display: 'flex',

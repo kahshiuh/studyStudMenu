@@ -3,9 +3,9 @@ import {Text, View, StyleSheet, Pressable} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
 const AddDeckButton = () => {
-  const {addDeck} = useGlobalContext();
+  const {openAddDeck} = useGlobalContext();
   const onPressHandler = () => {
-    addDeck();
+    openAddDeck();
   };
   return (
     <Pressable style={styles.button} onPress={onPressHandler}>

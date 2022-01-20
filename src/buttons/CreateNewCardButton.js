@@ -1,9 +1,14 @@
 import React from 'react';
 import {Text, View, StyleSheet, Pressable} from 'react-native';
+import {useGlobalContext} from '../resources/context';
 
 const CreateNewCard = () => {
+  const {turnOnEditModal, editModalOn, selectedDeck} = useGlobalContext();
+  const onPressHandler = () => {
+    turnOnEditModal();
+  };
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={onPressHandler}>
       <Text style={styles.buttonText}>Create New Card</Text>
     </Pressable>
   );

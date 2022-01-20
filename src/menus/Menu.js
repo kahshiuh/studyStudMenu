@@ -26,7 +26,7 @@ const Menu = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#00272B',
-    height: '100%',
+    height: '86%',
     alignItems: 'center',
     display: 'flex',
   },

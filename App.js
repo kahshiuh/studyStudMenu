@@ -1,10 +1,10 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
  *
  *
+ * "Need to add selected deck"
+ * "Need to fix remove deck and id change issues
  * git add .
- * git commit -m ""
+ * git commit -m "Add Deck Functionality, Create Deck Functionality"
  * git push -u origin main
  *
  * @format

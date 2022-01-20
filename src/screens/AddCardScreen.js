@@ -10,12 +10,20 @@ import {
 import {useGlobalContext} from '../resources/context';
 
 const AddCardScreen = () => {
-  const {turnOffEditModal, editModalOn, currentTerm, currentDefination} =
-    useGlobalContext();
+  const {
+    turnOffEditModal,
+    editModalOn,
+    currentTerm,
+    currentDefination,
+    addCard,
+  } = useGlobalContext();
   const onRequestCloseHandler = () => {
     turnOffEditModal();
   };
-  const onPressHandler = props => {};
+  const onPressHandler = () => {
+    addCard({defination, term});
+    turnOffEditModal();
+  };
   const [term, setTerm] = useState();
   const [defination, setDefination] = useState();
   return (

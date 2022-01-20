@@ -10,11 +10,14 @@ import {
 import {useGlobalContext} from '../resources/context';
 
 const AddDeckScreen = () => {
-  const {editDeckModalOn, turnOffEditDeckModal} = useGlobalContext();
+  const {editDeckModalOn, turnOffEditDeckModal, addDeck} = useGlobalContext();
   const onRequestCloseHandler = () => {
     turnOffEditDeckModal();
   };
-  const onPressHandler = props => {};
+  const onPressHandler = props => {
+    addDeck(deckName);
+    turnOffEditDeckModal();
+  };
   const [deckName, setDeckName] = useState();
   return (
     <View>

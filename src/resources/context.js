@@ -43,8 +43,14 @@ const AppProvider = ({children}) => {
   const removeCard = props => {
     dispatch({type: 'REMOVE_CARD', payload: props});
   };
-  const addDeck = () => {
+  const openAddDeck = () => {
     dispatch({type: 'TURN_ON_EDIT_DECK_MODAL'});
+  };
+  const addDeck = props => {
+    dispatch({type: 'ADD_DECK', payload: props});
+  };
+  const addCard = props => {
+    dispatch({type: 'ADD_CARD', payload: props});
   };
 
   return (
@@ -60,7 +66,9 @@ const AppProvider = ({children}) => {
         turnOnEditDeckModal,
         turnOffEditDeckModal,
         removeCard,
+        openAddDeck,
         addDeck,
+        addCard,
       }}>
       {children}
     </AppContext.Provider>
