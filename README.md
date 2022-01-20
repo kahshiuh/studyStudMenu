@@ -7,14 +7,15 @@
 * Remove Deck Functionality
 * Global Context Setup
 * Navigation Setup
-
+* Add Deck/Card Modal
+* 
 ---
 ## To Do
 * Improve CSS Formatting
 * Add Deck Functionality
-* Add/Remove Card Functionality
-* Modal For Adding Cards
+* Add Card Functionality
 * Show Selected Deck
+* Create New Card Modal + Functionality
 
 ---
 ## Notes
