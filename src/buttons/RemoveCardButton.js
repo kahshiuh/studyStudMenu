@@ -2,9 +2,14 @@ import {Pressable, View, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 import React from 'react';
 
-const RemoveCardButton = () => {
+const RemoveCardButton = props => {
+  const {removeCard} = useGlobalContext();
+  const onPressHandler = () => {
+    console.log('activated');
+    removeCard(props.card);
+  };
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={onPressHandler}>
       <Text style={styles.text}>Remove</Text>
     </Pressable>
   );

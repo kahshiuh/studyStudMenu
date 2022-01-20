@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Card} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import EditCardButton from '../buttons/EditCardButton';
 import RemoveCardButton from '../buttons/RemoveCardButton';
 
@@ -10,8 +10,8 @@ const CardItem = props => {
         {props.term}: {props.defination}
       </Text>
       <View style={styles.buttonContainer}>
-        <EditCardButton />
-        <RemoveCardButton />
+        <EditCardButton card={props.id} />
+        <RemoveCardButton card={props.id} />
       </View>
     </View>
   );
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: '#c880b7',
     borderRadius: 20,
-    flex: 1,
+    display: 'flex',
     justifyContent: 'center',
   },
   buttonContainer: {

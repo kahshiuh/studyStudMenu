@@ -1,31 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Pressable} from 'react-native';
-import {useGlobalContext} from './resources/context';
-import CreateNewCard from './buttons/CreateNewCardButton';
-import ReturnButton from './buttons/ReturnButton';
-import AddDeckButton from './buttons/AddDeckButton';
-const Header = ({title, navigation}) => {
-  const {editScreen, stopEditDeck} = useGlobalContext();
-  const buttons = editScreen ? (
-    <View style={styles.buttonContainer}>
-      <CreateNewCard />
-      <ReturnButton navigation={navigation} />
-    </View>
-  ) : (
-    <View style={styles.buttonContainer}>
-      <AddDeckButton />
-    </View>
-  );
+import {useGlobalContext} from '../resources/context';
+
+const ReturnButton = ({navigation}) => {
+  const {stopEditDeck} = useGlobalContext();
+  const onPressHandler = () => {
+    stopEditDeck();
+    navigation.navigate('StudyStud');
+  };
   return (
-    <View style={styles.header}>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>{title}</Text>
-      </View>
-      {buttons}
-    </View>
+    <Pressable style={styles.button} onPress={onPressHandler}>
+      <Text style={styles.buttonText}>Return</Text>
+    </Pressable>
   );
 };
-
 const styles = StyleSheet.create({
   header: {
     height: '12%',
@@ -67,4 +55,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-export default Header;
+export default ReturnButton;

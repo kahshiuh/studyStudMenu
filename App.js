@@ -4,7 +4,7 @@
  *
  *
  * git add .
- * git commit -m "Refactored files, created modal popup and added basic functionality, fixed header buttons"
+ * git commit -m ""
  * git push -u origin main
  *
  * @format

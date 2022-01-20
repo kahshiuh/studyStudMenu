@@ -9,6 +9,7 @@ const initialState = {
   editScreen: false,
   selectedDeck: 0,
   editModalOn: false,
+  editDeckModalOn: false,
   currentTerm: 'Enter Term Name',
   currentDefination: 'Enter Defination',
 };
@@ -33,6 +34,18 @@ const AppProvider = ({children}) => {
   const turnOffEditModal = () => {
     dispatch({type: 'TURN_OFF_EDIT_MODAL'});
   };
+  const turnOnEditDeckModal = () => {
+    dispatch({type: 'TURN_ON_EDIT_DECK_MODAL'});
+  };
+  const turnOffEditDeckModal = () => {
+    dispatch({type: 'TURN_OFF_EDIT_DECK_MODAL'});
+  };
+  const removeCard = props => {
+    dispatch({type: 'REMOVE_CARD', payload: props});
+  };
+  const addDeck = () => {
+    dispatch({type: 'TURN_ON_EDIT_DECK_MODAL'});
+  };
 
   return (
     <AppContext.Provider
@@ -44,6 +57,10 @@ const AppProvider = ({children}) => {
         stopEditDeck,
         turnOnEditModal,
         turnOffEditModal,
+        turnOnEditDeckModal,
+        turnOffEditDeckModal,
+        removeCard,
+        addDeck,
       }}>
       {children}
     </AppContext.Provider>

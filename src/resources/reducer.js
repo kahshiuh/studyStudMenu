@@ -31,6 +31,24 @@ const reducer = (state, action) => {
         ...state,
         editModalOn: false,
       };
+    case 'TURN_ON_EDIT_DECK_MODAL':
+      return {
+        ...state,
+        editDeckModalOn: true,
+      };
+    case 'TURN_OFF_EDIT_DECK_MODAL':
+      return {
+        ...state,
+        editDeckModalOn: false,
+      };
+    case 'REMOVE_CARD':
+      let arr = Object.entries(state.decks[state.selectedDeck - 1])[2][1];
+      arr.splice(action.payload, 1);
+      arr = Object.entries(state.decks[state.selectedDeck - 1])[3][1];
+      arr.splice(action.payload, 1);
+      return {
+        ...state,
+      };
   }
 
   return state;

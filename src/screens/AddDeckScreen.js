@@ -9,42 +9,33 @@ import {
 } from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
-const AddCardScreen = () => {
-  const {turnOffEditModal, editModalOn, currentTerm, currentDefination} =
-    useGlobalContext();
+const AddDeckScreen = () => {
+  const {editDeckModalOn, turnOffEditDeckModal} = useGlobalContext();
   const onRequestCloseHandler = () => {
-    turnOffEditModal();
+    turnOffEditDeckModal();
   };
   const onPressHandler = props => {};
-  const [term, setTerm] = useState();
-  const [defination, setDefination] = useState();
+  const [deckName, setDeckName] = useState();
   return (
     <View>
       <Modal
         animationType="Slide"
         transparent={true}
-        visible={editModalOn}
+        visible={editDeckModalOn}
         onRequestClose={onRequestCloseHandler}>
         <View style={styles.container}>
           <View style={styles.modalView}>
             <TextInput
               style={styles.input}
-              onChangeText={setTerm}
-              value={term}
-              placeholder={currentTerm}
-              keyboardType="default"
-            />
-            <TextInput
-              style={styles.input}
-              onChangeText={setDefination}
-              value={defination}
-              placeholder={currentDefination}
+              onChangeText={setDeckName}
+              value={deckName}
+              placeholder="Deck Name"
               keyboardType="default"
             />
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={onPressHandler}>
-              <Text style={styles.textStyle}>Add To Deck</Text>
+              <Text style={styles.textStyle}>Add Deck</Text>
             </Pressable>
             <Pressable style={styles.button} onPress={onRequestCloseHandler}>
               <Text style="styles.button">Exit</Text>
@@ -105,4 +96,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
-export default AddCardScreen;
+
+export default AddDeckScreen;

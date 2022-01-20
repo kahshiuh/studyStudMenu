@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {ScrollView, Pressable, View, Text, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
 import Header from '../Header';
-import EditMenu from '../EditMenu';
+import EditMenu from '../menus/EditMenu';
 import AddCardScreen from './AddCardScreen';
 
 const EditDeckScreen = ({navigation}) => {
