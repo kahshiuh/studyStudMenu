@@ -8,7 +8,6 @@ import EditMenu from '../menus/EditMenu';
 import AddCardScreen from './AddCardScreen';
 
 const EditDeckScreen = ({navigation}) => {
-  const {stopEditDeck} = useGlobalContext();
   return (
     <View style={styles.container}>
       <Header title="Edit Deck" navigation={navigation} />

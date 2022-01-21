@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Modal,
   Pressable,
@@ -16,16 +16,24 @@ const AddCardScreen = () => {
     currentTerm,
     currentDefination,
     addCard,
+    resetPlaceholder,
   } = useGlobalContext();
   const onRequestCloseHandler = () => {
     turnOffEditModal();
+    resetPlaceholder();
   };
   const onPressHandler = () => {
     addCard({defination, term});
     turnOffEditModal();
   };
-  const [term, setTerm] = useState();
-  const [defination, setDefination] = useState();
+  const [term, setTerm] = useState(currentTerm);
+  const [defination, setDefination] = useState(currentDefination);
+  useEffect(() => {
+    setTerm(currentTerm);
+  }, [currentTerm]);
+  useEffect(() => {
+    setDefination(currentDefination);
+  }, [currentDefination]);
   return (
     <View>
       <Modal
@@ -35,12 +43,14 @@ const AddCardScreen = () => {
         onRequestClose={onRequestCloseHandler}>
         <View style={styles.container}>
           <View style={styles.modalView}>
+            <Text style={styles.text}>Card Creation</Text>
             <TextInput
               style={styles.input}
               onChangeText={setTerm}
               value={term}
               placeholder={currentTerm}
               keyboardType="default"
+              multiline={true}
             />
             <TextInput
               style={styles.input}
@@ -48,15 +58,20 @@ const AddCardScreen = () => {
               value={defination}
               placeholder={currentDefination}
               keyboardType="default"
+              multiline={true}
             />
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={onPressHandler}>
-              <Text style={styles.textStyle}>Add To Deck</Text>
-            </Pressable>
-            <Pressable style={styles.button} onPress={onRequestCloseHandler}>
-              <Text style="styles.button">Exit</Text>
-            </Pressable>
+            <View style={styles.buttonContainer}>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={onPressHandler}>
+                <Text style={styles.textStyle}>Add To Deck</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={onRequestCloseHandler}>
+                <Text style={styles.textStyle}>Exit</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
       </Modal>
@@ -70,6 +85,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
+  },
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  text: {
+    color: 'white',
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   modalView: {
     margin: 20,
@@ -95,20 +120,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#F194FF',
   },
   buttonClose: {
-    backgroundColor: '#2196F3',
+    marginTop: 5,
+    marginRight: 8,
+    backgroundColor: '#2f4858',
   },
   textStyle: {
     color: 'white',
     fontWeight: 'bold',
+    fontFamily: 'Malayalam Sangam MN',
     textAlign: 'center',
   },
   modalText: {
-    marginBottom: 15,
     textAlign: 'center',
   },
   input: {
-    height: 40,
-    margin: 12,
+    height: 'auto',
+    fontFamily: 'Malayalam Sangam MN',
+    minWidth: '50%',
+    textAlign: 'flex-start',
+    color: 'white',
+    fontWeight: 'bold',
+    margin: 3,
     borderWidth: 1,
     padding: 10,
   },

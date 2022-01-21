@@ -51,20 +51,57 @@ const reducer = (state, action) => {
       };
     case 'ADD_DECK':
       let idNum = Object.keys(state.decks).length + 1;
-      let vars = {id: idNum, name: action.payload, terms: [], definations: []};
+      let vars = {
+        id: idNum,
+        name: action.payload,
+        terms: [],
+        definations: [],
+      };
       state.decks[idNum] = vars;
+
       return {
         ...state,
       };
     case 'ADD_CARD':
       //will need to update to keep removed decks in mind unless selectedDeck is not given id
-      console.log(action.payload.defination);
-      state.decks[state.selectedDeck - 1].terms.push(action.payload.term);
-      state.decks[state.selectedDeck - 1].definations.push(
-        action.payload.defination,
-      );
+      if (state.replaceCard === -1) {
+        state.decks[state.selectedDeck - 1].terms.push(action.payload.term);
+        state.decks[state.selectedDeck - 1].definations.push(
+          action.payload.defination,
+        );
+      } else {
+        state.decks[state.selectedDeck - 1].definations[state.replaceCard] =
+          action.payload.defination;
+        state.decks[state.selectedDeck - 1].terms[state.replaceCard] =
+          action.payload.term;
+      }
       return {
         ...state,
+      };
+    case 'SET_PLACEHOLDER':
+      let tempTerm = state.decks[state.selectedDeck - 1].terms[action.payload];
+      let tempDef =
+        state.decks[state.selectedDeck - 1].definations[action.payload];
+      return {
+        ...state,
+        currentTerm: tempTerm,
+        currentDefination: tempDef,
+      };
+    case 'RESET_PLACEHOLDER':
+      return {
+        ...state,
+        currentTerm: 'Enter Term Name',
+        currentDefination: 'Enter Defination',
+      };
+    case 'RESET_REPLACE_CARD':
+      return {
+        ...state,
+        replaceCard: -1,
+      };
+    case 'SET_REPLACE_CARD':
+      return {
+        ...state,
+        replaceCard: action.payload,
       };
   }
 

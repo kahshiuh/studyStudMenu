@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'Malayalam Sangam MN',
     fontSize: 23,
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   buttonText: {

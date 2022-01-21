@@ -12,6 +12,7 @@ const initialState = {
   editDeckModalOn: false,
   currentTerm: 'Enter Term Name',
   currentDefination: 'Enter Defination',
+  replaceCard: -1,
 };
 const AppProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -52,6 +53,18 @@ const AppProvider = ({children}) => {
   const addCard = props => {
     dispatch({type: 'ADD_CARD', payload: props});
   };
+  const setPlaceholder = props => {
+    dispatch({type: 'SET_PLACEHOLDER', payload: props});
+  };
+  const resetPlaceholder = () => {
+    dispatch({type: 'RESET_PLACEHOLDER'});
+  };
+  const resetReplaceCard = () => {
+    dispatch({type: 'RESET_REPLACE_CARD'});
+  };
+  const setReplaceCard = props => {
+    dispatch({type: 'SET_REPLACE_CARD', payload: props});
+  };
 
   return (
     <AppContext.Provider
@@ -69,6 +82,10 @@ const AppProvider = ({children}) => {
         openAddDeck,
         addDeck,
         addCard,
+        setPlaceholder,
+        resetPlaceholder,
+        setReplaceCard,
+        resetReplaceCard,
       }}>
       {children}
     </AppContext.Provider>

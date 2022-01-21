@@ -2,9 +2,17 @@ import React from 'react';
 import {Pressable, View, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
-const EditCardButton = props => {
-  const {turnOnEditModal, editModalOn, selectedDeck} = useGlobalContext();
+const EditCardButton = ({card}) => {
+  const {
+    turnOnEditModal,
+    editModalOn,
+    selectedDeck,
+    setPlaceholder,
+    setReplaceCard,
+  } = useGlobalContext();
   const onPressHandler = () => {
+    setPlaceholder(card);
+    setReplaceCard(card);
     turnOnEditModal();
   };
   return (

@@ -8,18 +8,20 @@ const EditMenu = props => {
   const card = decks.find(element => element.id === selectedDeck);
   let i = -1;
   return (
-    <View style={styles.container}>
-      {card.terms.map(() => {
-        i++;
-        return (
-          <CardItem
-            key={i}
-            id={i}
-            term={card.terms[i]}
-            defination={card.definations[i]}></CardItem>
-        );
-      })}
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        {card.terms.map(() => {
+          i++;
+          return (
+            <CardItem
+              key={i}
+              id={i}
+              term={card.terms[i]}
+              defination={card.definations[i]}></CardItem>
+          );
+        })}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
