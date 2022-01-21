@@ -3,20 +3,15 @@
 ## Completed
 * Basic Home Menu Screen
 * Basic Edit Deck Screen
-* View Deck Functionality
-* Remove Deck Functionality
-* Global Context Setup
+* Remove Deck/Card Functionality
+* Add/Remove Deck Modal + Functionality
+* Add/Remove/Edit Card Modal + Functionality
 * Navigation Setup
-* Add Deck/Card Modal
-* 
 ---
 ## To Do
 * Improve CSS Formatting
-* Add Deck Functionality
-* Add Card Functionality
-* Show Selected Deck
-* Create New Card Modal + Functionality
-
+* Highlight Selected Deck
+* Array Refactoring
 ---
 ## Notes
 * Other App Parts In Progress
