@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Pressable} from 'react-native';
 import {useGlobalContext} from './resources/context';
 import CreateNewCardButton from './buttons/CreateNewCardButton';
 import ReturnButton from './buttons/ReturnButton';
 import AddDeckButton from './buttons/AddDeckButton';
 const Header = ({title, navigation}) => {
-  const {editScreen, stopEditDeck} = useGlobalContext();
+  const {editScreen} = useGlobalContext();
   const buttons = editScreen ? (
     <View style={styles.buttonContainer}>
       <CreateNewCardButton />

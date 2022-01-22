@@ -4,7 +4,7 @@
  * "Need to add selected deck"
  * "Need to fix remove deck and id change issues
  * git add .
- * git commit -m "Add Deck Functionality, Create Deck Functionality"
+ * git commit -m "Edit Card Directly Functionality, Modal Functionality"
  * git push -u origin main
  *
  * @format

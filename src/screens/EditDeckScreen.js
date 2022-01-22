@@ -1,8 +1,5 @@
-import {useGlobalContext} from '../resources/context';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {ScrollView, Pressable, View, Text, StyleSheet} from 'react-native';
-import React, {useEffect} from 'react';
+import {View, StyleSheet} from 'react-native';
+import React from 'react';
 import Header from '../Header';
 import EditMenu from '../menus/EditMenu';
 import AddCardScreen from './AddCardScreen';
@@ -22,12 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  text: {
-    color: 'white',
-    fontFamily: 'Malayalam Sangam MN',
-    fontSize: 20,
-    textAlign: 'center',
   },
 });
 export default EditDeckScreen;

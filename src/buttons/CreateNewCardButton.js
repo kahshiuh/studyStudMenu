@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, View, StyleSheet, Pressable} from 'react-native';
+import {Text, StyleSheet, Pressable} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
 const CreateNewCard = () => {
-  const {turnOnEditModal, editModalOn, selectedDeck} = useGlobalContext();
+  const {turnOnEditModal} = useGlobalContext();
   const onPressHandler = () => {
     turnOnEditModal();
   };

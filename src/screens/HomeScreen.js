@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useGlobalContext} from '../resources/context';
 import Header from '../Header';
-import {ScrollView, Pressable, View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Menu from '../menus/Menu';
 import AddDeckScreen from './AddDeckScreen';
 

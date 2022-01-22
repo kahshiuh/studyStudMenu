@@ -1,18 +1,15 @@
+import React from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
-import React from 'react';
-
-const RemoveCardButton = props => {
-  const {removeCard} = useGlobalContext();
-  const onPressHandler = () => {
-    removeCard(props.card);
-  };
+const EditDeckNameButton = ({id}) => {
+  const onPressHandler = () => {};
   return (
     <Pressable style={styles.button} onPress={onPressHandler}>
-      <Text style={styles.text}>Remove</Text>
+      <Text style={styles.text}>Edit Name</Text>
     </Pressable>
   );
 };
+
 const styles = StyleSheet.create({
   button: {
     borderRadius: 9,
@@ -32,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RemoveCardButton;
+export default EditDeckNameButton;

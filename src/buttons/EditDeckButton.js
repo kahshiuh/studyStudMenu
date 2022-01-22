@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pressable, View, Text, StyleSheet} from 'react-native';
+import {Pressable, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
 const EditDeckButton = ({id}) => {
@@ -9,7 +9,7 @@ const EditDeckButton = ({id}) => {
   }
   return (
     <Pressable style={styles.button} onPress={onClickHandler}>
-      <Text style={styles.text}>Edit</Text>
+      <Text style={styles.text}>Edit Cards</Text>
     </Pressable>
   );
 };

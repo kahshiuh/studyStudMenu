@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
     height: 'auto',
     fontFamily: 'Malayalam Sangam MN',
     minWidth: '50%',
-    textAlign: 'flex-start',
     color: 'white',
     fontWeight: 'bold',
     margin: 3,

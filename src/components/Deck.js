@@ -1,16 +1,17 @@
 import React from 'react';
-import {Text, View, StyleSheet, Card} from 'react-native';
-import {useGlobalContext} from '../resources/context';
+import {Text, View, StyleSheet} from 'react-native';
 import RemoveDeckButton from '../buttons/RemoveDeckButton';
 import EditDeckButton from '../buttons/EditDeckButton';
+import EditDeckNameButton from '../buttons/EditDeckNameButton';
 
 const Deck = props => {
   return (
     <View style={styles.deck} id={props.id} key={props.id}>
       <Text style={styles.text}>{props.name}</Text>
       <View style={styles.buttonContainer}>
-        <RemoveDeckButton id={props.id}> </RemoveDeckButton>
+        <EditDeckNameButton id={props.id}></EditDeckNameButton>
         <EditDeckButton id={props.id}> </EditDeckButton>
+        <RemoveDeckButton id={props.id}> </RemoveDeckButton>
       </View>
     </View>
   );

@@ -103,6 +103,16 @@ const reducer = (state, action) => {
         ...state,
         replaceCard: action.payload,
       };
+    case 'RESET_ACTIVATED_DECK':
+      return {
+        ...state,
+        activatedDeck: -1,
+      };
+    case 'SET_ACTIVATED_DECK':
+      return {
+        ...state,
+        replaceCard: action.payload,
+      };
   }
 
   return state;

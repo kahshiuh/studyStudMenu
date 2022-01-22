@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pressable, View, Text, StyleSheet} from 'react-native';
+import {Pressable, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 
 const RemoveDeckButton = ({id}) => {

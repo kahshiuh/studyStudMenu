@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, ScrollView, View, StyleSheet, SafeAreaView} from 'react-native';
+import {ScrollView, StyleSheet, SafeAreaView} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 import CardItem from '../components/CardItem';
 
