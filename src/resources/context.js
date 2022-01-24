@@ -14,6 +14,8 @@ const initialState = {
   currentDefination: 'Enter Defination',
   replaceCard: -1,
   activatedDeck: -1,
+  currentName: 'Enter Deck Name',
+  replaceDeck: -1,
 };
 const AppProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -67,10 +69,22 @@ const AppProvider = ({children}) => {
     dispatch({type: 'SET_REPLACE_CARD', payload: props});
   };
   const resetActivatedDeck = () => {
-    dispatch({types: 'RESET_ACTIVATED_DECK'});
+    dispatch({type: 'RESET_ACTIVATED_DECK'});
   };
   const setActivatedDeck = props => {
-    dispatch({types: 'SET_ACTIVATED_DECK', payload: props});
+    dispatch({type: 'SET_ACTIVATED_DECK', payload: props});
+  };
+  const setCurrentDeckName = props => {
+    dispatch({type: 'SET_CURRENT_DECK_NAME', payload: props});
+  };
+  const resetCurrentDeckName = () => {
+    dispatch({type: 'RESET_CURRENT_DECK_NAME'});
+  };
+  const setReplaceDeck = props => {
+    dispatch({type: 'SET_REPLACE_DECK', payload: props});
+  };
+  const resetReplaceDeck = () => {
+    dispatch({type: 'RESET_REPLACE_DECK'});
   };
 
   return (
@@ -95,6 +109,10 @@ const AppProvider = ({children}) => {
         resetReplaceCard,
         resetActivatedDeck,
         setActivatedDeck,
+        setCurrentDeckName,
+        setReplaceDeck,
+        resetReplaceDeck,
+        resetCurrentDeckName,
       }}>
       {children}
     </AppContext.Provider>

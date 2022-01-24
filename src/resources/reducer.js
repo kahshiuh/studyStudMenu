@@ -50,15 +50,18 @@ const reducer = (state, action) => {
         ...state,
       };
     case 'ADD_DECK':
-      let idNum = Object.keys(state.decks).length + 1;
-      let vars = {
-        id: idNum,
-        name: action.payload,
-        terms: [],
-        definations: [],
-      };
-      state.decks[idNum] = vars;
-
+      if (state.replaceDeck === -1) {
+        let idNum = Object.keys(state.decks).length + 1;
+        let vars = {
+          id: idNum,
+          name: action.payload,
+          terms: [],
+          definations: [],
+        };
+        state.decks[idNum] = vars;
+      } else {
+        state.decks[state.replaceDeck - 1].name = action.payload;
+      }
       return {
         ...state,
       };
@@ -111,7 +114,27 @@ const reducer = (state, action) => {
     case 'SET_ACTIVATED_DECK':
       return {
         ...state,
-        replaceCard: action.payload,
+        activatedDeck: action.payload,
+      };
+    case 'SET_REPLACE_DECK':
+      return {
+        ...state,
+        replaceDeck: action.payload,
+      };
+    case 'RESET_REPLACE_DECK':
+      return {
+        ...state,
+        replaceDeck: -1,
+      };
+    case 'SET_CURRENT_DECK_NAME':
+      return {
+        ...state,
+        currentName: state.decks[action.payload - 1].name,
+      };
+    case 'RESET_CURRENT_DECK_NAME':
+      return {
+        ...state,
+        currentName: 'Enter Deck Name',
       };
   }
 

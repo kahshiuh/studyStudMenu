@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Modal,
   Pressable,
@@ -10,15 +10,40 @@ import {
 import {useGlobalContext} from '../resources/context';
 
 const AddDeckScreen = () => {
-  const {editDeckModalOn, turnOffEditDeckModal, addDeck} = useGlobalContext();
+  const {
+    editDeckModalOn,
+    turnOffEditDeckModal,
+    addDeck,
+    currentName,
+    resetCurrentDeckName,
+  } = useGlobalContext();
   const onRequestCloseHandler = () => {
     turnOffEditDeckModal();
+    resetCurrentDeckName();
   };
   const onPressHandler = props => {
     addDeck(deckName);
     turnOffEditDeckModal();
+    resetCurrentDeckName();
   };
-  const [deckName, setDeckName] = useState();
+  useEffect(() => {
+    setDeckName(currentName);
+  }, [currentName]);
+  const [deckName, setDeckName] = useState(currentName);
+  const createButton =
+    currentName === 'Enter Deck Name' ? (
+      <Pressable
+        style={[styles.button, styles.buttonClose]}
+        onPress={onPressHandler}>
+        <Text style={styles.textStyle}>Add Deck</Text>
+      </Pressable>
+    ) : (
+      <Pressable
+        style={[styles.button, styles.buttonClose]}
+        onPress={onPressHandler}>
+        <Text style={styles.textStyle}>Change Name</Text>
+      </Pressable>
+    );
   return (
     <View>
       <Modal
@@ -35,11 +60,7 @@ const AddDeckScreen = () => {
               placeholder="Deck Name"
               keyboardType="default"
             />
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={onPressHandler}>
-              <Text style={styles.textStyle}>Add Deck</Text>
-            </Pressable>
+            {createButton}
             <Pressable style={styles.button} onPress={onRequestCloseHandler}>
               <Text style="styles.button">Exit</Text>
             </Pressable>

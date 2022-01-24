@@ -3,6 +3,7 @@ import {Text, View, StyleSheet} from 'react-native';
 import RemoveDeckButton from '../buttons/RemoveDeckButton';
 import EditDeckButton from '../buttons/EditDeckButton';
 import EditDeckNameButton from '../buttons/EditDeckNameButton';
+import SelectedButton from '../buttons/SelectedButton';
 
 const Deck = props => {
   return (
@@ -12,6 +13,7 @@ const Deck = props => {
         <EditDeckNameButton id={props.id}></EditDeckNameButton>
         <EditDeckButton id={props.id}> </EditDeckButton>
         <RemoveDeckButton id={props.id}> </RemoveDeckButton>
+        <SelectedButton id={props.id}></SelectedButton>
       </View>
     </View>
   );

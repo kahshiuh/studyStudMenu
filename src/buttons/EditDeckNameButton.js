@@ -2,7 +2,13 @@ import React from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
 import {useGlobalContext} from '../resources/context';
 const EditDeckNameButton = ({id}) => {
-  const onPressHandler = () => {};
+  const {openAddDeck, setReplaceDeck, setCurrentDeckName} = useGlobalContext();
+  const onPressHandler = () => {
+    setReplaceDeck(id);
+    setCurrentDeckName(id);
+
+    openAddDeck();
+  };
   return (
     <Pressable style={styles.button} onPress={onPressHandler}>
       <Text style={styles.text}>Edit Name</Text>
