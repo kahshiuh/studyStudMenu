@@ -2,6 +2,7 @@ import React from 'react';
 const reducer = (state, action) => {
   switch (action.type) {
     case 'DELETE_DECK':
+      console.log(state.currentDeckID);
       return {
         ...state,
         decks: state.decks.filter(deck => deck.id !== action.payload),
@@ -51,7 +52,8 @@ const reducer = (state, action) => {
       };
     case 'ADD_DECK':
       if (state.replaceDeck === -1) {
-        let idNum = Object.keys(state.decks).length + 1;
+        let idNum = state.currentDeckID;
+        state.currentDeckID++;
         let vars = {
           id: idNum,
           name: action.payload,
@@ -72,10 +74,11 @@ const reducer = (state, action) => {
         state.decks[state.selectedDeck - 1].definations.push(
           action.payload.defination,
         );
+        state.currentCardID++;
       } else {
-        state.decks[state.selectedDeck - 1].definations[state.replaceCard] =
+        state.decks[state.selectedDeck].definations[state.replaceCard] =
           action.payload.defination;
-        state.decks[state.selectedDeck - 1].terms[state.replaceCard] =
+        state.decks[state.selectedDeck].terms[state.replaceCard] =
           action.payload.term;
       }
       return {

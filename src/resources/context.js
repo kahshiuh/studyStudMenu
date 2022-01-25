@@ -16,14 +16,12 @@ const initialState = {
   activatedDeck: -1,
   currentName: 'Enter Deck Name',
   replaceDeck: -1,
+  currentDeckID: data.length,
 };
 const AppProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const deleteDeck = props => {
     dispatch({type: 'DELETE_DECK', payload: props});
-  };
-  const viewDeck = props => {
-    dispatch({type: 'VIEW_DECK', payload: props});
   };
   const editDeck = props => {
     dispatch({type: 'TURN_ON_EDIT_DECK_MODE', payload: state.editScreen});
@@ -92,7 +90,6 @@ const AppProvider = ({children}) => {
       value={{
         ...state,
         deleteDeck,
-        viewDeck,
         editDeck,
         stopEditDeck,
         turnOnEditModal,
